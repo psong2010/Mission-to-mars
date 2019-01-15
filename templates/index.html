@@ -12,7 +12,7 @@
 
 <style>
     .backgroundimg {
-        background-image: url("{{mars_facts['featured_image']}}");
+        background-image: url("{{mars_facts['featured image']}}");
     }
     .jumbotron {
     background: rgba(204, 204, 204, 0.3);
@@ -23,40 +23,26 @@
     
     <div class="jumbotron" style="text-align: center">
             <h1>Mars Data</h1>
-            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Retreieve new data</a></p>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Retrieve new data</a></p>
             </div>
     
     <div class = "row" >
         <div class="col-md-4  offset-md-1 rounded"  style="background: rgba(243, 241, 241, 0.6);">
             <h3>Headlines</h3>
             <hr>
-            <h5>{{mars_facts['headlines']['title']}}</h5>
-            <p>{{mars_facts['headlines']['description']}}</p>
+            <h5>{{mars_facts['title']}}</h5>
+            <p>{{mars_facts['description']}}</p>
             <br>
             <h3>Tweets</h3>
             <hr>
-            <p>{{mars_facts['tweets']}}</p></div>
+            <p>{{mars_facts['tweet']}}</p></div>
         <div class="col-md-2"></div>
         <div class="col-md-2 rounded" style="background: rgba(243, 241, 241, 0.6)">
             <h3>Fact Summary</h3>
             <hr>
-            <p>{{mars_facts['fact_table'] |safe}}</p>
+            <p>{{mars_facts['table'] |safe}}</p>
         </div>
         </div>
-    
-    <div class="row" style="margin:50px">
-            {% for entry in mars_facts['hemispheres'] %}
-            <div class="col-md-3">
-            <div class="card mx-auto" style="width: 18rem;">
-            <img class="card-img-top" src="{{entry['img_url']}}" alt="Card image cap">
-            <div class="card-body">
-                <p class="card-text">{{entry['title']}}</p>
-            
-            </div>  
-            </div>
-        </div>
-        {% endfor %}
-    </div>
 
     <!-- Scripts used for functionality -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
